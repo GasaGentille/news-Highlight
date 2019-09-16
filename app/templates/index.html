@@ -1,20 +1,20 @@
-{% extends 'base.html'%}
-{% block content%}
+{% extends 'base.html' %}
+{% block content %}
 <div class="container">
     <!-- Tittle  Section  -->
-    {{ title}}
+    <h1>{{ title}} </h1>
     <h3> Top Technology News Sources</h3>
     <hr>
     {% for source in technology %}
-    {{source.title}}
+    <p>{{source.name}}</p>
 
-    {% endfor%}
+    {% endfor %}
 
     <!--Sport news section-->
     <h3> Top Sports News Sources</h3>
     <hr>
     {% for sports_source in sports %}
-    {{ sports_source.title}}
+    <p>{{ sports_source.name}}</p>
     {% endfor %}
 
     <!-- Business News Section  -->
@@ -22,8 +22,8 @@
     <h3> Top Business News Sources</h3>
     <hr>
     {% for business_source in business %}
-    {{ business_source.title}}
-    {% endfor% }
+    <p>{{ business_source.name}}</p>
+    {% endfor %}
 
     <!-- Entertainment News Section  -->
 
@@ -31,8 +31,8 @@
     <hr>
 
     {% for entertainment_source in entertainment %}
-    {{ entertainment_source.title}}
-    {% endfor%}
+    <p>{{ entertainment_source.name}}</p>
+    {% endfor %}
 </div>
 
 
