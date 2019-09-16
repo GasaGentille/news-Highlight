@@ -9,10 +9,10 @@ api_key = None
 base_url = None
 
 # Getting the article  url
-article_url = None
+# article_url = None
 
 def configure_request(app):
-    global api_key,base_url,articles_url
+    global api_key,base_url,article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['SOURCE_API_BASE_URL']
     article_url = app.config['ARTICLE_BASE_URL']
@@ -22,7 +22,7 @@ def get_source(category):
 	Function that gets the json response to our url request
 	'''
     get_source_url = base_url.format(category,api_key)
-    print(get_source_url)
+    
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
@@ -63,40 +63,36 @@ def process_results(source_list):
     return source_results
 
 def get_article(id):
-	'''
-	Function that processes the article and returns a list of article objects
-	'''
-	get_article_url = article_url.format(id,api_key)
+    '''
+    Function that processes the article and returns a list of article objects
+    '''
+    get_article_url = article_url.format(id,api_key)
+    print(get_article_url)
+    with urllib.request.urlopen(get_article_url) as url:
+        article_results = json.loads(url.read())
 
-	with urllib.request.urlopen(get_article_url) as url:
-		article_results = json.loads(url.read())
 
+        articles_object = None
+        if article_results['articles']:
+            article_object = process_article(article_results['articles'])
 
-		articles_object = None
-		if article_results['article']:
-			article_object = process_article(article_results['article'])
-
-	return article_object
+    return article_object
 
 def process_article(article_list):
 	
-	article_object = []
-	for article_item in articles_list:
-		id = article_item.get('id')
-		author = article_item.get('author')
-		title = article_item.get('title')
-		description = article_item.get('description')
-		url = article_item.get('url')
-		urlToImage = article_item.get('urlToImage')
-		publishedAt = article_item.get('publishedAt')
-		
-		if image:
-			article_result = Article(id,author,title,description,url,urlToImage,publishedAt)
-			article_object.append(article_result)	
-		
-
-		
-
-		
-
-	return article_object
+    article_object = []
+    for article_item in article_list:
+        id = article_item.get('id')
+        name = article_item.get('name')
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+        
+        if urlToImage:
+            article_result = Article(id,name,author,title,description,url,urlToImage,publishedAt)
+            
+            article_object.append(article_result)	
+    return article_object
