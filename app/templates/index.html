@@ -1,14 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best news website </title>
-        {% endif %}
-    </head>
-    <body>
+{% extends 'base.html'%}
+{% block content%}
+<div class="container">
+    <!-- Tittle  Section  -->
+    {{ title}}
+    <h3> Top Technology News Sources</h3>
+    <hr>
+    {% for source in technology %}
+    {{source.title}}
 
-    </body>
-</html>
+    {% endfor%}
+
+    <!--Sport news section-->
+    <h3> Top Sports News Sources</h3>
+    <hr>
+    {% for sports_source in sports %}
+    {{ sports_source.title}}
+    {% endfor %}
+
+    <!-- Business News Section  -->
+
+    <h3> Top Business News Sources</h3>
+    <hr>
+    {% for business_source in business %}
+    {{ business_source.title}}
+    {% endfor% }
+
+    <!-- Entertainment News Section  -->
+
+    <h3> Top Entertainment News Sources</h3>
+    <hr>
+
+    {% for entertainment_source in entertainment %}
+    {{ entertainment_source.title}}
+    {% endfor%}
+</div>
+
+
+{%endblock%}
