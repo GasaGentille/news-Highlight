@@ -1,6 +1,6 @@
 class Source:
     '''
-    Movie class to define Movie Objects
+    Source class to define source Objects
     '''
 
     def __init__(self,id,name,description,url,category,language,country):
@@ -15,6 +15,9 @@ class Source:
 
 
 class Article:
+    '''
+    Article class to define article Objects
+    '''
 
     all_articles = []
 
@@ -30,21 +33,21 @@ class Article:
         self.content = content
 
 
-    def save_article(self):
-        Article.all_articles.append(self)
+    # def save_article(self):
+    #     Article.all_articles.append(self)
 
 
-    @classmethod
-    def clear_articles(cls):
-        Article.all_articles.clear()
+    # @classmethod
+    # def clear_articles(cls):
+    #     Article.all_articles.clear()
 
-    @classmethod
-    def get_articles(cls,id):
+    # @classmethod
+    # def get_articles(cls,id):
 
-        response = []
+    #     response = []
 
-        for article in cls.all_articles:
-            if article.id == id:
-                response.append(article)
+    #     for article in cls.all_articles:
+    #         if article.id == id:
+    #             response.append(article)
 
-        return response
+    #     return response
