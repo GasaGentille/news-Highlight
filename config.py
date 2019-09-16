@@ -7,6 +7,9 @@ class Config:
     NEWS_API_KEY = os.environ.get('SOURCE_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
+    def init_app(app):
+   		pass
+
 
 class ProdConfig(Config):
     pass
