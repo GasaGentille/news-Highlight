@@ -2,37 +2,43 @@
 {% block content %}
 <div class="container">
     <!-- Tittle  Section  -->
-    <h1>{{ title}} </h1>
-    <h3> Top Technology News Sources</h3>
-    <hr>
-    {% for source in technology %}
-    <p><a href='/source/{{source.id}}'>{{source.name}}</a></p>
+    <div class="jumbotron">
+        <h1>{{ title}}</h1>
+    </div>
+    <div class="row">
+        <h3> Top Technology News Sources</h3>
+        <hr>
+        {% for source in technology %}
 
-    {% endfor %}
+        <div class="col-md-3"><a href='/source/{{source.id}}'>{{source.name}}</a></div>
 
-    <!--Sport news section-->
-    <h3> Top Sports News Sources</h3>
-    <hr>
-    {% for sports_source in sports %}
-    <p><a href='/source/{{sports_source.id}}'>{{ sports_source.name}}</a></p>
-    {% endfor %}
+        {% endfor %}
 
-    <!-- Business News Section  -->
+        <!--Sport news section-->
+        <h3> Top Sports News Sources</h3>
+        <hr>
+        {% for sports_source in sports %}
+        <div class="col-md-3"><a href='/source/{{sports_source.id}}'>{{ sports_source.name}}</a></div>
+        {% endfor %}
 
-    <h3> Top Business News Sources</h3>
-    <hr>
-    {% for business_source in business %}
-    <p><a href='/source/{{business_source.id}}'>{{ business_source.name}}</a></p>
-    {% endfor %}
 
-    <!-- Entertainment News Section  -->
+        <!-- Business News Section  -->
 
-    <h3> Top Entertainment News Sources</h3>
-    <hr>
+        <h3> Top Business News Sources</h3>
+        <hr>
+        {% for business_source in business %}
+        <div class="col-md-3"><a href='/source/{{business_source.id}}'>{{ business_source.name}}</a></div>
+        {% endfor %}
 
-    {% for entertainment_source in entertainment %}
-    <p><a href='/source/{{ entertainment_source.id}}'>{{ entertainment_source.name}}</a></p>
-    {% endfor %}
+        <!-- Entertainment News Section  -->
+
+        <h3> Top Entertainment News Sources</h3>
+        <hr>
+
+        {% for entertainment_source in entertainment %}
+        <div class="col-md-3"><a href='/source/{{ entertainment_source.id}}'>{{ entertainment_source.name}}</a></div>
+        {% endfor %}
+    </div>
 </div>
 
 
