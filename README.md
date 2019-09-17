@@ -1,4 +1,4 @@
-# News Highlights Apllication
+# News Highlights Application
 
 
 ## Description of the project
