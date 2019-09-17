@@ -22,8 +22,7 @@ A text  Editor
 Clone this repository to your local computer.
 Ensure you have python3.6 installed in your computer.
 From the terminal navigate to the cloned project folder.
-Create a virtual environment and access the folder via your virtual amchine.
-Visit https://newsapi.org/ and register for an API key.
+Create a virtual environment and register for an API key.
 Create start.sh file and in it write the following lines:
 
 export NEWS_API_KEY='<Your-Api-Key>'
