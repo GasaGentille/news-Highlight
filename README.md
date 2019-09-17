@@ -11,7 +11,7 @@ The Application will help user to:
 3.Click on article to view for specific news on news page
 4.You can visit the application using: https://newshighlightseven.herokuapp.com/
 
-# SetUp instructions
+## SetUp instructions
 
 Python version 3.6
 Flask
@@ -33,13 +33,13 @@ Run chmod +x start.sh follwoed by ./start.sh while in the project folder to star
 Once started, the project can be accessed on your localhost using the address: localhost:5000.
 
 
-# Technologies used
+## Technologies used
 
 1.Python v3.6
 2.Boostrap
 3.Flask
 
-# License information
+## License information
   
 Copyright(c)2019 gentille
  
