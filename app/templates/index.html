@@ -14,7 +14,7 @@
     <h3> Top Sports News Sources</h3>
     <hr>
     {% for sports_source in sports %}
-    <p>{{ sports_source.name}}</p>
+    <p><a href='/source/{{sports_source.id}}'>{{ sports_source.name}}</a></p>
     {% endfor %}
 
     <!-- Business News Section  -->
@@ -22,7 +22,7 @@
     <h3> Top Business News Sources</h3>
     <hr>
     {% for business_source in business %}
-    <p>{{ business_source.name}}</p>
+    <p><a href='/source/{{business_source.id}}'>{{ business_source.name}}</a></p>
     {% endfor %}
 
     <!-- Entertainment News Section  -->
@@ -31,7 +31,7 @@
     <hr>
 
     {% for entertainment_source in entertainment %}
-    <p>{{ entertainment_source.name}}</p>
+    <p><a href='/source/{{ entertainment_source.id}}'>{{ entertainment_source.name}}</a></p>
     {% endfor %}
 </div>
 

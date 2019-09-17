@@ -4,10 +4,6 @@ from ..requests import get_source,get_article
 from ..models import Source
 
 
-# from flask import render_template
-# from app import app
-
-# Views
 @main.route('/')
 def index():
 
